@@ -83,5 +83,6 @@ def remove_first(my_list):
     else: 
         elementos = my_list["elements"]
         elemento = elementos[0]
+        my_list["size"] -= 1
         del elementos[0]
         return elemento
