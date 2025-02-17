@@ -78,7 +78,7 @@ def is_empty(my_list):
     
 def last_element(my_list):
     last_element = my_list["last"]
-    return last_element
+    return last_element["info"]
 
 def change_info(my_list, pos, new_info):
     if pos < 0 or pos > my_list["size"] -1:
@@ -137,22 +137,24 @@ def delete_element(my_list, pos):
 def remove_last(my_list):
     if my_list["size"] == 0:
         return None
-    
-    last = my_list["last"]
-    if my_list["size"] == 1:
-        my_list["first"] = None
-        my_list["last"] = None
-        my_list["size"] -= 1
-        return last["info"]
-        
     else:
-        actual = my_list["first"]
-        while actual["next"]["next"] is not None:
-            actual = actual["next"]
-        actual["next"] = None
-        my_list["last"] = actual
-        my_list["size"] -= 1
-        return last["info"]
+        
+        if my_list["size"] == 1:
+            last = my_list["last"]
+            my_list["first"] = None
+            my_list["last"] = None
+            my_list["size"] -= 1
+            return last["info"]
+            
+        else:
+            actual = my_list["first"]
+            last = my_list["last"]
+            while actual["next"]["next"] is not None:
+                actual = actual["next"]
+            actual["next"] = None
+            my_list["last"] = actual
+            my_list["size"] -= 1
+            return last["info"]
 
 def sub_list(my_list, start, end):
     if start < 0 or start > my_list["size"] -1 or end < 0 or end > my_list["size"] -1 or start > end:
