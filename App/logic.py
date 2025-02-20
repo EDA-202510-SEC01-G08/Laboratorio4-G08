@@ -75,6 +75,11 @@ def load_data(catalog):
     book_tag_size = load_books_tags(catalog)
     ################ TODO Cargar los datos de libros para leer
     books_to_read = load_books_to_read(catalog)
+    print(f"Books loaded: {books}")
+    print(f"Authors loaded: {authors}")
+    print(f"Tags loaded: {tag_size}")
+    print(f"Book tags loaded: {book_tag_size}")
+    print(f"Books to read loaded: {books_to_read}")
     return books, authors, tag_size, book_tag_size, books_to_read
 
 
