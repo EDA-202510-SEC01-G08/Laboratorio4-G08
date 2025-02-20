@@ -393,8 +393,7 @@ def measure_stack_performance(catalog):
     # Medir top
     start_time = get_time()
     ################# TODO Implementar la medición de tiempo para la operación top
-    while not st.is_empty(stack):
-        st.top(stack)
+    tope = st.top(stack)
     end_time = get_time()
     top_time = delta_time(start_time, end_time)
 
