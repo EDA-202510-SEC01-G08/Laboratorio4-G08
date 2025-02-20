@@ -384,11 +384,11 @@ def measure_stack_performance(catalog):
     end_time = get_time()
     push_time = delta_time(start_time, end_time)
 
-
     # Medir top
     start_time = get_time()
     ################# TODO Implementar la medición de tiempo para la operación top
-    top = st.top(stack)
+    while not st.is_empty(stack):
+        st.top(stack)
     end_time = get_time()
     top_time = delta_time(start_time, end_time)
 
@@ -396,9 +396,9 @@ def measure_stack_performance(catalog):
     start_time = get_time()
     ################# TODO Implementar la medición de tiempo para la operación pop
     while not st.is_empty(stack):
-        st.pop(stack)
+        st.pop(stack)   
     end_time = get_time()
-    pop_time = delta_time(start_time, end_time)
+    pop_time = delta_time(start_time, end_time) 
 
     return {
         "push_time": push_time,
