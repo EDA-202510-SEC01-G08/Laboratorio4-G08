@@ -60,11 +60,14 @@ def exchange(my_list, pos1, pos2):
     my_list["elements"][pos2] = temp
     return my_list
 
-def sub_list(my_list, start, end):
+def sub_list(my_list, start, num_elements):
     sublist = new_list()
-    for i in range(start, end):
-        add_last(sublist, my_list["elements"][i])
-    return sublist
+    if start > num_elements:
+        raise Exception('IndexError: list index out of range')
+    else: 
+        for i in range(start, num_elements):
+            add_last(sublist, my_list["elements"][i])
+        return sublist
 
 def remove_last(my_list):
     if my_list["size"] == 0:

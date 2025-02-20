@@ -31,7 +31,7 @@ from DataStructures.List import array_list as lt
 from DataStructures.Queue import queue as q
 from DataStructures.Stack import stack as st
 
-data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/'
+data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/GoodReads (1)'
 
 """
 El controlador se encarga de mediar entre la vista y el modelo.
@@ -123,7 +123,7 @@ def load_books_to_read(catalog):
     Carga la información del archivo to_read y los agrega a la lista de libros por leer
     """
     ################ TODO Implementar la carga de los libros por leer del archivo to_read
-    bookstoreadfile = data_dir + 'books.csv'
+    bookstoreadfile = data_dir + '/to_read.csv'
     input_file = csv.DictReader(open(bookstoreadfile, encoding='utf-8'))
     for book_to_read in input_file:
         add_book_to_read(catalog, book_to_read)
@@ -143,6 +143,7 @@ def get_books_stack_by_user(catalog, user_id):
         book = lt.get_element(catalog["books_to_read"], pos)
         if book["user_id"] == user_id:
             st.push(books_stack, book)
+            print("pedro archila es gay")
     return books_stack
 
 
