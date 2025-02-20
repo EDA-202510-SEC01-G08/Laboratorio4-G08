@@ -31,7 +31,7 @@ from DataStructures.List import array_list as lt
 from DataStructures.Queue import queue as q
 from DataStructures.Stack import stack as st
 
-data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/GoodReads (1)'
+data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/GoodReads'
 
 """
 El controlador se encarga de mediar entre la vista y el modelo.
@@ -143,7 +143,6 @@ def get_books_stack_by_user(catalog, user_id):
         book = lt.get_element(catalog["books_to_read"], pos)
         if book["user_id"] == user_id:
             st.push(books_stack, book)
-            print("pedro archila es gay")
     return books_stack
 
 
