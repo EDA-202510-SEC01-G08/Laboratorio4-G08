@@ -141,7 +141,7 @@ def get_books_stack_by_user(catalog, user_id):
     # TODO Completar la función que retorna una pila con los libros que un usuario tiene por leer. Se debe usar el TAD Pila para resolver el requerimiento.    
     for pos in range(lt.size(catalog["books_to_read"])):
         book = lt.get_element(catalog["books_to_read"], pos)
-        if book["user_id"] == user_id:
+        if int(book["user_id"]) == user_id:
             st.push(books_stack, book)
     return books_stack
 
