@@ -164,9 +164,9 @@ def get_user_position_on_queue(catalog, user_id, book_id):
 
     while not q.is_empty(queue) and not found:
         book = q.dequeue(queue)
-        if book["book_id"] == book_id:
+        if int(book["book_id"]) == book_id:
             position += 1
-            if book["user_id"] == user_id:
+            if int(book["user_id"]) == user_id:
                 user_position = position
                 found = True
         else:
